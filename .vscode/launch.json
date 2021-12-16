@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run",
+            "request": "launch",
+            "type": "pwa-node",
+            "console": "integratedTerminal",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["start"]
+        },
+        {
+            "name": "Run...",
+            "request": "launch",
+            "type": "pwa-node",
+            "console": "integratedTerminal",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["start", "--", "-s ${input:statement}", "-p ${input:parser}"]
+        },
+        {
+            "name": "Show help",
+            "request": "launch",
+            "type": "pwa-node",
+            "console": "integratedTerminal",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["start", "--", "--help"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "statement",
+            "type": "promptString",
+            "description": "Enter the file path to your statement",
+            "default": "${workspaceFolder}/secret/statement.pdf"
+        },
+        {
+            "id": "parser",
+            "type": "promptString",
+            "description": "Enter the parser to use",
+            "default": "CIBCFrench"
+        }
+    ]
+}
